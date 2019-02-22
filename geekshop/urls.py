@@ -18,9 +18,9 @@ from django.conf.urls import url
 from mainapp import views as mainapp
 
 urlpatterns = [
-    url(r'^$', mainapp.main),
-    url(r'^products/', mainapp.products),
-    url(r'^contacts/', mainapp.contacts),
-    url('admin/', admin.site.urls),
-    url(r'^', mainapp.main),
+    url(r'^$', mainapp.main, name='main'),
+    url(r'^products/', mainapp.products, name='products'),
+    url(r'^contacts/', mainapp.contacts, name='contacts'),
+    url('admin/', admin.site.urls, name='admin'),
+    # url(r'^', mainapp.main),
 ]

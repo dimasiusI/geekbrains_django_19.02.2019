@@ -1,0 +1,17 @@
+<div class="menu">
+    <a class="{% if request.resolver_match.url_name == 'main' %}
+    menu-item active
+    {% else %}
+    menu-item
+    {% endif %}" href="{% url 'main' %}">домой</a>
+    <a class="{% if request.resolver_match.url_name == 'products' %}
+    menu-item active
+    {% else %}
+    menu-item
+    {% endif %}" href="{% url 'products' %}">продукты</a>
+    <a class="{% if request.resolver_match.url_name == 'contacts' %}
+    menu-item active
+    {% else %}
+    menu-item
+    {% endif %}" href="{% url 'contacts' %}">контакты</a>
+</div>
