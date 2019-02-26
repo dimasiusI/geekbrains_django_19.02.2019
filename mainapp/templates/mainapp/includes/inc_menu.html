@@ -8,7 +8,7 @@
     menu-item active
     {% else %}
     menu-item
-    {% endif %}" href="{% url 'products' %}">продукты</a>
+    {% endif %}" href="{% url 'products:index' %}">продукты</a>
     <a class="{% if request.resolver_match.url_name == 'contacts' %}
     menu-item active
     {% else %}

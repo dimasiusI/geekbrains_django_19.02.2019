@@ -6,4 +6,10 @@
 
 {% block content %}
     <h1>Продукты</h1>
+    {% for product in products %}
+        <div>{{ product.name }} ({{ product.category.name }})</div>
+        {% if product.image %}
+            <img src={{ product.image.url }} />
+        {% endif %}
+    {% endfor %}
 {% endblock %}

@@ -15,12 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import url
+from django.conf.urls.static import static
+from django.conf.urls import include
+from django.conf import settings
 from mainapp import views as mainapp
+
 
 urlpatterns = [
     url(r'^$', mainapp.main, name='main'),
-    url(r'^products/', mainapp.products, name='products'),
+    url(r'^products/', include(('mainapp.urls', 'mainapp'), namespace='products')),
     url(r'^contacts/', mainapp.contacts, name='contacts'),
     url('admin/', admin.site.urls, name='admin'),
     # url(r'^', mainapp.main),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
