@@ -3,7 +3,7 @@ from .models import Product
 
 
 def main(request):
-    return render(request, 'mainapp/index.html', context={'name': 'ivan', 'items': ['item1', 'item2', 'item3']})
+    return render(request, 'mainapp/index.html', context={'user': request.user, 'items': ['item1', 'item2', 'item3']})
 
 
 def products(request, pk=None):
