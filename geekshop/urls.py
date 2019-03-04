@@ -24,6 +24,7 @@ from mainapp import views as mainapp
 urlpatterns = [
     url(r'^$', mainapp.main, name='main'),
     url(r'^products/', include(('mainapp.urls', 'mainapp'), namespace='products')),
+    url(r'^basket/', include(('basketapp.urls', 'basketapp'), namespace='basket')),
     url(r'^contacts/', mainapp.contacts, name='contacts'),
     url(r'^auth/', include(('authapp.urls', 'authapp'), namespace='auth')),
     url('admin/', admin.site.urls, name='admin'),
